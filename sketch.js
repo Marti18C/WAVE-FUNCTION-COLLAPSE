@@ -2,7 +2,7 @@ const celdas = []; // 4x4
 const RETICULA = 4;
 
 const azulejos = [];
-const NA = 11; // numero dse azulejos
+const NA = 11; // numero de azulejos
 
 const reglas = [
   //reglas de los bordes de cada azulejo
@@ -95,7 +95,20 @@ function preload(){
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1080, 1080);
+
+  let opcionesI = []
+  for (let i = 0; 1 < azulejos.length; i ++){
+    opcionesI.push (i);
+  }
+
+  for(let i = 0; i < RETICULA * RETICULA; i++){
+    celdas[i] = {
+      colapsada: false,
+      opciones: opcionesI,
+    };
+}
+prin (celdas);
 }
 
 function draw() {
